@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Text Search App</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Text Search</h1>
+  </header>
+
+  <main>
+    <div class="upload-section">
+      <input type="file" id="fileInput" accept=".txt"/>
+      <select id="encoding">
+        <option value="utf-8" selected>UTF-8</option>
+        <option value="ascii">ASCII</option>
+        <option value="utf-16">UTF-16</option>
+        <option value="iso-8859-1">ISO-8859-1</option>
+      </select>
+    </div>
+
+    <div class="search-section">
+      <input type="text" id="searchInput" placeholder="Search (e.g. hello AND world)"/>
+      <button onclick="runSearch()">Search</button>
+      
+      <!-- Add Binary Search Toggle -->
+      <div>
+        <input type="checkbox" id="binaryToggle" />
+        <label for="binaryToggle">Use Binary Search (sorted text only)</label>
+      </div>
+    </div>
+
+    <div id="output" class="results"></div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
